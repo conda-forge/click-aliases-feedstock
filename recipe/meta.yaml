@@ -1,13 +1,13 @@
 {% set name = "click-aliases" %}
-{% set version = "1.0.1" %}
+{% set version = "1.0.4" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: f48012077e0788eb02f4f8ee458fef3601873fec6c998e9ea8b4554394e705a3
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz"
+  sha256: 384313c5dc4c4bd64d9eadaff39ad91352747e8cdfd2f95d504d914c01eb4eda
 
 build:
   number: 0

@@ -10,7 +10,7 @@ source:
   sha256: f48012077e0788eb02f4f8ee458fef3601873fec6c998e9ea8b4554394e705a3
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
 
@@ -18,12 +18,14 @@ requirements:
   host:
     - click
     - pip
-    - python >=3
+    - python {{ python_min }}
   run:
     - click
-    - python >=3
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - click_aliases
 
